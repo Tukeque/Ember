@@ -1,0 +1,4 @@
+($print ($quote (foo bar waz)))
+($print ($quote [a (foo bar (waz)) c]))
+($print ($quasiquote (foo bar waz)))
+($print ($quasiquote [foo bar ($unquote ($+ [$number 3] [$number 5]))]))

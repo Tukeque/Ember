@@ -1,0 +1,30 @@
+($set! ($define hello) "Hello, World!")
+($print ($get hello))
+
+($set! ($define list) ($quote [a (foo bar (dumb)) c]))
+($print ($get list))
+
+($print ($index [$index ($get list) ($number 1)] ($number 2)))
+
+($push! ($get list) a)
+($push! ($get list) ($number 5))
+($push! ($get list) ($quote (a b $number 5)))
+($print ($get list))
+
+
+
+($set! list ($quote (a b c)))
+
+($print ($get list))
+
+($push! ($get list) x)
+($print ($get list))
+
+($pop! ($get list))
+($print ($get list))
+
+($delete! ($get list) ($number 1))
+($print ($get list))
+
+($insert! ($get list) ($number 0) bean)
+($print ($get list))

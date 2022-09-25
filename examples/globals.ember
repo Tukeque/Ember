@@ -1,0 +1,9 @@
+($globaldefine whatever)
+($print ($globalget whatever))
+
+($globalset! whatever ($number 5))
+
+($print ($globalget whatever))
+
+($globalfree whatever)
+; ($print ($globalget whatever)) ; => gives an error

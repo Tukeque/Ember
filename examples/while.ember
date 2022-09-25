@@ -1,0 +1,6 @@
+($set! ($define i) ($number 0))
+($while! [$< ($get i) ($number 5)] [$begin
+    ($print "Hello guys")
+    ($set! i ($+ ($get i) ($number 1)))
+])
+($dowhile! [$== ($number 30) ($number 2)] [$print "once"])

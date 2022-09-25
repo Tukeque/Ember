@@ -1,0 +1,24 @@
+%import common.WS
+%ignore WS
+
+COMMENT.1: ";" /[^\n]*/
+%ignore COMMENT
+
+start: expr+         -> main
+
+expr: _IN expr* _OUT -> expr
+    | STR            -> str
+    | IDENTIFIER     -> atom
+
+_IN: ("(" | "[")
+_OUT: (")" | "]")
+STR: ESCAPED_STRING_SINGLE | ESCAPED_STRING_DOUBLE
+IDENTIFIER: /([^\s\(\)\[\]"'])+/
+
+_STRING_INNER: /.*?/
+_STRING_ESC_INNER: _STRING_INNER /(?<!\\)(\\\\)*?/
+ESCAPED_STRING_DOUBLE: "\"" _STRING_ESC_INNER "\""
+ESCAPED_STRING_SINGLE: "'" _STRING_ESC_INNER "'"
+
+%import common.LETTER
+%import common.INT

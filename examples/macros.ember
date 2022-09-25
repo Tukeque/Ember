@@ -1,0 +1,21 @@
+($macro fart_bird
+    ([x y] [$+ x y])
+    ([x y z] [$+ x ($+ y z)])
+)
+
+($set! ($define bird) ($number 1))
+($set! ($define goat) ($number 5))
+($print (fart_bird ($get bird) ($get goat)))
+($print (fart_bird ($get bird) ($get goat) ($number 5)))
+; ($print (fart_bird ($get bird))) ; => causes error: no syntax was satisfied
+
+; macros with "..."
+; ($macro fart
+;     ([x! y...] [$begin
+;         ($print x)
+;         ($print ($quote y))
+;     ])
+
+; (fart a b c d e f)
+; => a
+; => '(b c d e f) ; it replaces "y" with "(b c d e f)"

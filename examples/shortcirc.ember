@@ -1,0 +1,11 @@
+($set! ($define list) ($quote (a b)))
+
+($if ($&& [$== ($len ($get list)) ($number 3)] [$index ($get list) ($number 2)])
+    [$print yea]
+    [$print nope]
+)
+
+; ($if ($& [$== ($len ($get list)) ($number 3)] [$index ($get list) ($number 2)]) ; errors cuz checks even if length is not good
+;     [$print yea]
+;     [$print nope]
+; )

@@ -1,0 +1,12 @@
+($set! ($define my_unit) "Hello, world!")
+
+($set! ($define do) ($lambda [] [$print ($globalget my_unit)]))
+
+($print ($strget ($get my_unit) ($number 1)))
+(do)
+($strset! ($get my_unit) a ($number 1))
+($print ($strget ($get my_unit) ($number 1)))
+(do)
+
+($strpush! ($get my_unit) " == Bye, world!")
+(do)

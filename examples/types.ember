@@ -1,0 +1,5 @@
+($print ($type ($number 1)))
+($print ($type "Hello"))
+($print ($type ($quote (a b c))))
+($print ($type ($lambda [x] [$+ ($get x) ($number 1)])))
+($print ($type ($nil)))

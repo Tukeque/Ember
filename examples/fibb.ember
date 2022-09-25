@@ -1,0 +1,17 @@
+($set! ($define fibb) ($lambda [x]
+    [$if ($<= ($get x) ($number 1))
+        ($get x)
+        ($+ (fibb ($- ($get x) ($number 1))) (fibb ($- ($get x) ($number 2))))
+    ]
+))
+
+($print (fibb ($number 0)))
+($print (fibb ($number 1)))
+($print (fibb ($number 2)))
+($print (fibb ($number 3)))
+($print (fibb ($number 4)))
+($print (fibb ($number 5)))
+($print (fibb ($number 6)))
+($print (fibb ($number 7)))
+($print (fibb ($number 8)))
+($print (fibb ($number 9)))

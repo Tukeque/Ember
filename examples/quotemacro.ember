@@ -1,0 +1,7 @@
+($macro test
+    ([whatever1 whatever2] [$+ whatever1 whatever2])
+)
+
+($print (test ($number 3) ($number 5)))
+
+($print ($quotemacro test foo bar))

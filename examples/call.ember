@@ -1,0 +1,5 @@
+($set! ($define foo) ($lambda [x] [$+ ($get x) ($number 1)]))
+
+($set! ($define x) ($number 5))
+
+($print ($call ($get foo) ($get x)))
